@@ -23,9 +23,9 @@
               <li><a class="dropdown-item" href="#">Consulta de compras</a></li>
               <li><a class="dropdown-item" href="#">Consulta de ventas</a></li>
               <li><a class="dropdown-item" href="#">Consulta de almacen</a></li>
-              <li><a class="dropdown-item" href="#">Reportes compras</a></li>
-              <li><a class="dropdown-item" href="#">Reportes ventas</a></li>
-              <li><a class="dropdown-item" href="#">Reportes ganancias</a></li>
+              <li><a class="dropdown-item" href="/gerenciaReportesCompras">Reportes compras</a></li>
+              <li><a class="dropdown-item" href="/gerenciaReportesVentas">Reportes ventas</a></li>
+              <li><a class="dropdown-item" href="/gerenciaReportesGanancias">Reportes ganancias</a></li>
             </ul>
           </li>
   

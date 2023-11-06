@@ -142,4 +142,18 @@ class BeastMexController extends Controller
            /*  return "se guardo el registro"; ---Prueba de funcionamiento */
            return redirect('/almacenActualizar')->with('confirmacion','El producto se actualizó correctamente.');
         }
+
+        //Gerencia
+        //seccion de reportes
+        public function metodoRV(){
+            return view('gerenciaReportesVentas');
+        }
+
+        public function metodoRG(){
+            return view('gerenciaReportesGanancias');
+        }
+
+        public function metodoRC(){
+            return view('gerenciaReportesCompras');
+        }
 }

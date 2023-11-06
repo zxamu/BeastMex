@@ -74,3 +74,8 @@ Route::get('/gerencia', function () {
 });
 
 Route::post('/guardarUsuario', [BeastMexController::class, 'metodoGuardar'])->name('Guardar');
+
+//seccion de reportes
+Route::get('/gerenciaReportesVentas',[BeastMexController::class,'metodoRV']);
+Route::get('/gerenciaReportesGanancias',[BeastMexController::class,'metodoRG']);
+Route::get('/gerenciaReportesCompras',[BeastMexController::class,'metodoRC']);

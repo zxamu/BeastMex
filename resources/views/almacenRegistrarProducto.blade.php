@@ -6,7 +6,10 @@
 
 
 
-<h2 class="display-1 text-center text-primary">Registro Producto</h2>
+<div class="container mt-5 col-md-6">
+  <p class="fw-bolder fs-3 text-center">ALMACEN</p>
+  <p class="fw-medium fs-5 text-center">REGISTRAR PRODUCTO</p>
+</div>
 
 <div class="container mt-5 col-md-6">
 <div class= "container">

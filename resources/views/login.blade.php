@@ -6,7 +6,8 @@
 
 
 <div class="container mt-5 col-md-6">
-  @if(session()->has('confirmacion'))
+  
+  @if(session()->has('Inicio de sesion'))
 
   <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong>{{ session('Inicio de sesion')}}</strong>
@@ -25,6 +26,7 @@
 
       @endforeach
   @endif
+
 <form method="POST" action="pLogin">
   @csrf
     <div class="input-group mb-3">

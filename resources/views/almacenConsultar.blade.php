@@ -4,7 +4,10 @@
 
 @section('contenido')
 
-<h2 class="display-1 text-center text-primary">Consultar Producto</h2>
+<div class="container mt-5 col-md-6">
+  <p class="fw-bolder fs-3 text-center">ALMACEN</p>
+  <p class="fw-medium fs-5 text-center">CONSULTAR PRODUCTOS</p>
+</div>
 <div class="container mt-5 col-md-6">
 <table class = "container">
 <table class="table table-striped-columns">

@@ -10,6 +10,25 @@
 </div>
     
 <div class="container mt-5 col-md-6">
+    @if(session()->has('Registro Proveedor'))
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session('Registro Proveedor')}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  
+    @endif
+  
+  
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ $error }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+        @endforeach
+    @endif
   <p class="fw-medium fs-5 text-center">- Datos personales -</p>
   <form method="POST" action="/pRegistrarProveedor">
     @csrf

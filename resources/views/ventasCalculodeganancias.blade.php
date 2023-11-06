@@ -4,31 +4,31 @@
 
 @section('contenido')
 
+<div class="container mt-5 col-md-6">
+  <p class="fw-bolder fs-3 text-center">VENTAS</p>
+  <p class="fw-medium fs-5 text-center">- Calculo de ganancias -</p>
+  </div>
 
 <div class="container mt-5 col-md-6">
+  @if(session()->has('confirmacion'))
 
- {{--  @if(session()->has('Mostrarcalculodeganancias')) --}}
-{{--   <script>
-    Swal.fire({
-      'Exitoso',
-      'Registro exitoso',
-      'success'
-    });
-  </script>
-  @endif --}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{ session('confirmacion')}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  @endif
 
 
   @if($errors->any())
+      @foreach ($errors->all() as $error)
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{ $error }}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
 
-        @foreach ($errors->all() as $error)
-            
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>{{ $error }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
-        @endforeach
-    @endif
+      @endforeach
+  @endif
 
   <form method="POST" action="/Mostrarcalculodegancnias">
 

@@ -4,7 +4,11 @@
 
 @section('contenido')
 
-<h2 class="display-1 text-center text-primary">Buscar Producto</h2>
+<div class="container mt-5 col-md-6">
+  <p class="fw-bolder fs-3 text-center">ALMACEN</p>
+  <p class="fw-medium fs-5 text-center">BUSCAR PRODUCTO</p>
+</div>
+
 <div class="container mt-5 col-md-6">
 <nav class="navbar bg-body-tertiary justify-content-center">
   <div class="container-fluid">
