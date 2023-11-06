@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\validadorLogin;
+use App\Http\Requests\validadorGerencia;
 use App\Http\Requests\validadorCoomprasBuscarProducto;
 use App\Http\Requests\validadorVentasConsultarTickets;
 use App\Http\Requests\validadorVentasCalculoGanancias;
@@ -144,6 +145,16 @@ class BeastMexController extends Controller
         }
 
         //Gerencia
+        public function metodoGerencia(){
+            return view('gerencia');
+        }
+
+        public function metodoGuardarUser(validadorGerencia $req){
+            return redirect('/gerencia')->with('confirmacion','El usuario se guardo correctamente.');
+        }
+
+
+
         //seccion de reportes
         public function metodoRV(){
             return view('gerenciaReportesVentas');

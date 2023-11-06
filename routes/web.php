@@ -69,11 +69,8 @@ Route::post('/Imprimirtickets',[BeastMexController::class,'metodoImprimirtickets
 
 //GERENCIA
 
-Route::get('/gerencia', function () {
-    return view('tabmenu');
-});
-
-Route::post('/guardarUsuario', [BeastMexController::class, 'metodoGuardar'])->name('Guardar');
+Route::get('/gerencia',[BeastMexController::class,'metodoGerencia'])->name('Gerencia');
+Route::post('/guardarU', [BeastMexController::class, 'metodoGuardarUser']);
 
 //seccion de reportes
 Route::get('/gerenciaReportesVentas',[BeastMexController::class,'metodoRV']);

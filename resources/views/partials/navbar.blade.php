@@ -12,14 +12,11 @@
           {{-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li> --}}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{-- <li class="nav-item dropdown"> --}}
+            <a class="nav-link" href="/gerencia" role="button" aria-expanded="false">
               GERENCIA
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Registrar usuarios</a></li>
-              <li><a class="dropdown-item" href="#">Consultar usuarios</a></li>
-              <li><a class="dropdown-item" href="#">Buscar usuarios</a></li>
+            {{-- <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Consulta de compras</a></li>
               <li><a class="dropdown-item" href="#">Consulta de ventas</a></li>
               <li><a class="dropdown-item" href="#">Consulta de almacen</a></li>
@@ -27,7 +24,7 @@
               <li><a class="dropdown-item" href="/gerenciaReportesVentas">Reportes ventas</a></li>
               <li><a class="dropdown-item" href="/gerenciaReportesGanancias">Reportes ganancias</a></li>
             </ul>
-          </li>
+          </li> --}}
   
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
