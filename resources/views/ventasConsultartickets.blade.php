@@ -4,19 +4,17 @@
 
 @section('contenido')
 
-@include('sweetalert::alert')
-
 <div class="container mt-5 col-md-6">
 
   @if(session()->has('Mostrartickets'))
-  <script>
+{{--   <script>
     Swal.fire({
       'Exitoso',
       'Resultado exitoso',
       'success'
     });
   </script>
-  endif
+  endif --}}
 
 
   @if($errors->any())

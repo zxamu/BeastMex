@@ -4,19 +4,18 @@
 
 @section('contenido')
 
-@include('sweetalert::alert')
 
 <div class="container mt-5 col-md-6">
 
   @if(session()->has('Mostrarcalculodeganancias'))
-  <script>
+{{--   <script>
     Swal.fire({
       'Exitoso',
       'Registro exitoso',
       'success'
     });
   </script>
-  @endif
+  @endif --}}
 
 
   @if($errors->any())

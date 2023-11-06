@@ -4,19 +4,17 @@
 
 @section('contenido')
 
-@include('sweetalert::alert')
-
 <div class="container">
 
   @if(session()->has('Buscarproducto'))
-  <script>
+{{--   <script>
     Swal.fire({
       'Exitoso',
       'Registro exitoso',
       'success'
     });
   </script>
-  @endif
+  @endif --}}
 
 
   @if($errors->any())

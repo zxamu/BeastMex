@@ -4,10 +4,9 @@
 
 @section('contenido')
 
-@include('sweetalert::alert')
 
 <div class="container mt-5 col-md-6">
-  @if (session()->has('Inicio de sesion'))
+{{--   @if (session()->has('Inicio de sesion'))
       <script>
         Swal.fire({
           'Inicio de sesion exitoso',
@@ -15,7 +14,7 @@
           'success',
         });
       </script>
-  @endif
+  @endif --}}
 <form method="POST" action="pLogin">
   @csrf
     <div class="input-group mb-3">
