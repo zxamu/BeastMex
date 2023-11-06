@@ -7,7 +7,7 @@
 
 <div class="container mt-5 col-md-6">
 
-  @if(session()->has('Mostrarcalculodeganancias'))
+ {{--  @if(session()->has('Mostrarcalculodeganancias')) --}}
 {{--   <script>
     Swal.fire({
       'Exitoso',
@@ -40,12 +40,12 @@
         {{$errors->first('txtFecha')}}
       </div>
     </div>
+  </form>
 
     <div class="text-center">
       <button type="submit" class="btn btn-primary">Calcular ganancias</button>
     </div>
 
-  </form>
 </div>
   
 @endsection

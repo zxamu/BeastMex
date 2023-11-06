@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class validadorLogin extends FormRequest
+class validadorComprasRegistroProveedor extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,16 @@ class validadorLogin extends FormRequest
     public function rules(): array
     {
         return [
-            //Reglas de validacion para el login
+            'txtNombre' => 'required',
+            'txtAP' => 'required',
+            'txtAM' => 'required',
+            'txtEmpresa' => 'required',
+            'txtRZ' => 'required',
+            'txtCalle' => 'required',
+            'txtColonia' => 'required',
+            'txtNumero' => 'required|number',
+            'txtTel' => 'required|number|max:10',
             'txtCorreo' => 'required|email',
-            'txtContra' => 'required|max:8',
-            //Reglas de validacion para buscar productos
-            //'txtNombreP' => 'required',
         ];
     }
 }

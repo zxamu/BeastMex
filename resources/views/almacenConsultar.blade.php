@@ -5,6 +5,7 @@
 @section('contenido')
 
 <h2 class="display-1 text-center text-primary">Consultar Producto</h2>
+<div class="container mt-5 col-md-6">
 <table class = "container">
 <table class="table table-striped-columns">
 
@@ -86,6 +87,7 @@
   </tbody>
 </table>
 </table>
+</div> {{-- div container --}}
 
 <nav aria-label="...">
   <ul class="pagination justify-content-center">

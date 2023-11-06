@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
           </li>
           {{-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -34,9 +34,9 @@
               COMPRAS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Registrar proveedor</a></li>
-              <li><a class="dropdown-item" href="#">Consultar orden de compra</a></li>
-              <li><a class="dropdown-item" href="#">Buscar productos</a></li>
+              <li><a class="dropdown-item" href="/comprasRegistroProveedores">Registrar proveedor</a></li>
+              <li><a class="dropdown-item" href="/compraConsultarOrdenCompra">Consultar orden de compra</a></li>
+              <li><a class="dropdown-item" href="/comprasBuscarProductos">Buscar productos</a></li>
             </ul>
           </li>
   
@@ -45,8 +45,8 @@
               VENTAS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Consultar tickets</a></li>
-              <li><a class="dropdown-item" href="#">Calculo de ganancias</a></li>
+              <li><a class="dropdown-item" href="/ventasConsultartickets">Consultar tickets</a></li>
+              <li><a class="dropdown-item" href="/ventasCalculodeganancias">Calculo de ganancias</a></li>
             </ul>
           </li>
   
@@ -55,7 +55,7 @@
               ALMACEN
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/">Registrar productos</a></li>
+              <li><a class="dropdown-item" href="/almacenRegistrarProducto">Registrar productos</a></li>
               <li><a class="dropdown-item" href="/almacenActualizar">Actualizar productos</a></li>
               <li><a class="dropdown-item" href="/almacenConsultar">Consultar productos</a></li>
               <li><a class="dropdown-item" href="/almacenBuscar">Buscar productos</a></li>

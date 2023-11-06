@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\validadorLogin;
+use App\Http\Requests\validadorCoomprasBuscarProducto;
+use App\Http\Requests\validadorVentasConsultarTickets;
+use App\Http\Requests\validadorVentasCalculoGanancias;
+use App\Http\Requests\validadorAlmacenRegistro;
+use App\Http\Requests\validadorComprasRegistroProveedor;
+
 class BeastMexController extends Controller
 {
     public function metodoLogin(){
@@ -11,20 +18,39 @@ class BeastMexController extends Controller
     }
 
     public function metodoBuscarProductos(){
-        return view('buscarProductos');
+        return view('comprasBuscarProductos');
     }
 
     public function metodoConsultarOC(){
-        return view('consultarOrdenCompra');
+        return view('compraConsultarOrdenCompra');
     }
 
+    public function metodoRegistroProveedor(){
+        return view('comprasRegistroProveedores');
+    }
 
-    public function metodoGuardar(validadorLogin $req){
+    public function metodoInicioSesion(validadorLogin $req){
         //return 'Se esta procesando tu inicio de sesion';
         //return 'Se esta procesando tu busqueda de producto';
-        Alert::success('Inicio de sesion','Haz iniciado sesion')->persistent(true);
+        //Alert::success('Inicio de sesion','Haz iniciado sesion')->persistent(true);
 
         return redirect('/')->with('Inicio de sesion', 'Se esta procesando tu inicio de sesion');
+    }
+
+    public function metodoComprasBP(validadorCoomprasBuscarProducto $req){
+        //return 'Se esta procesando tu inicio de sesion';
+        //return 'Se esta procesando tu busqueda de producto';
+        //Alert::success('Inicio de sesion','Haz iniciado sesion')->persistent(true);
+
+        return redirect('/comprasBuscarProductos')->with('BusquedaProducto', 'Se esta procesando tu busqueda');
+    }
+
+    public function metodoRegistroP(validadorComprasRegistroProveedor $req){
+        //return 'Se esta procesando tu inicio de sesion';
+        //return 'Se esta procesando tu busqueda de producto';
+        //Alert::success('Inicio de sesion','Haz iniciado sesion')->persistent(true);
+
+        return redirect('/comprasRegistroProveedores')->with('Registro Proveedor', 'Se esta procesando tu registro de proveedor');
     }
 
     //VENTAS
@@ -60,9 +86,9 @@ class BeastMexController extends Controller
         return view('ventasCalculodeganancias'); 
         }
     
-        public function metodoMostrarcalculodegancnias(validadorFormbeastmex $req){
+        public function metodoMostrarcalculodegancnias(validadorVentasCalculoGanancias $req){
     
-            Alert::success('Mostrarcalculodeganancias','Tu registro ha sido exitoso')->persistent(true);
+            //Alert::success('Mostrarcalculodeganancias','Tu registro ha sido exitoso')->persistent(true);
     
             return redirect('/ventasCalculodeganancias')->with('confirmacion','Mostrar Calculo de Ganancias');
         }
@@ -73,9 +99,9 @@ class BeastMexController extends Controller
             return view('ventasConsultartickets'); 
         }
     
-        public function metodoMostrartickets(validadorFormbeastmex $req){
+        public function metodoMostrartickets(validadorVentasConsultarTickets $req){
     
-            Alert::success('Mostrartickets','Tu registro ha sido exitoso')->persistent(true);
+            //Alert::success('Mostrartickets','Tu registro ha sido exitoso')->persistent(true);
     
             return redirect('/ventasConsultartickets')->with('confirmacion','Mostrar Tikets');
         }
@@ -89,8 +115,8 @@ class BeastMexController extends Controller
 
         //ALMACEN
 
-        public function metodoRegistro(){
-            return view('welcome');
+        public function metodoRegistroProducto(){
+            return view('almacenRegistrarProducto');
         }
     
         public function metodoActualizar(){

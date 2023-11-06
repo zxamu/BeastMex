@@ -60,7 +60,7 @@
         </div>
       </div>
       
-      <button type="submit" class="btn btn-primary">Registrar usuario</button>
+      <button type="submit" class="btn btn-primary">Actualizar usuario</button>
     </form>
   </div>
 

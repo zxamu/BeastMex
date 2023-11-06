@@ -5,6 +5,7 @@
 @section('contenido')
 
 <h2 class="display-1 text-center text-primary">Buscar Producto</h2>
+<div class="container mt-5 col-md-6">
 <nav class="navbar bg-body-tertiary justify-content-center">
   <div class="container-fluid">
     <form class="d-flex" role="search">
@@ -94,7 +95,7 @@
   </tbody>
 </table>
 </table>
-
+</div>
 <nav aria-label="...">
   <ul class="pagination justify-content-center">
     <li class="page-item active" aria-current="page">
