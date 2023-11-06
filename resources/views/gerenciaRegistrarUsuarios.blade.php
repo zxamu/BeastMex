@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('titulo','Actualizacion de usuarios')
+@section('titulo','Registro de usuarios')
 
 @section('contenido')
 

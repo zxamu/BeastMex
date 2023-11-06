@@ -79,3 +79,12 @@ Route::post('/guardarUsuario', [BeastMexController::class, 'metodoGuardar'])->na
 Route::get('/gerenciaReportesVentas',[BeastMexController::class,'metodoRV']);
 Route::get('/gerenciaReportesGanancias',[BeastMexController::class,'metodoRG']);
 Route::get('/gerenciaReportesCompras',[BeastMexController::class,'metodoRC']);
+
+//registro y actualizar usuario
+
+Route::get('/gerenciaRegistrarUsuario',[BeastMexController::class,'metodoRegistrarU']);
+Route::get('/gerenciaActualizarUsuario',[BeastMexController::class,'metodoActualizarU']);
+
+//consultar y buscar
+Route::get('/gerenciaConsultarUsuario',[BeastMexController::class,'metodoConsultarU']);
+Route::get('/gerenciaBuscarUsuario',[BeastMexController::class,'metodoBuscarU']);

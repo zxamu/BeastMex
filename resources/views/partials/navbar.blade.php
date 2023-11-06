@@ -17,9 +17,10 @@
               GERENCIA
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Registrar usuarios</a></li>
-              <li><a class="dropdown-item" href="#">Consultar usuarios</a></li>
-              <li><a class="dropdown-item" href="#">Buscar usuarios</a></li>
+              <li><a class="dropdown-item" href="/gerenciaRegistrarUsuario">Registrar usuarios</a></li>
+              <li><a class="dropdown-item" href="/gerenciaConsultarUsuario">Consultar usuarios</a></li>
+              <li><a class="dropdown-item" href="/gerenciaBuscarUsuario">Buscar usuarios</a></li>
+              <li><a class="dropdown-item" href="/gerenciaActualizarUsuario">Actualizar usuarios</a></li>
               <li><a class="dropdown-item" href="#">Consulta de compras</a></li>
               <li><a class="dropdown-item" href="#">Consulta de ventas</a></li>
               <li><a class="dropdown-item" href="#">Consulta de almacen</a></li>

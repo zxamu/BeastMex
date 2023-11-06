@@ -156,4 +156,25 @@ class BeastMexController extends Controller
         public function metodoRC(){
             return view('gerenciaReportesCompras');
         }
+
+        //registrar y actualizar usuarios
+
+        public function metodoRegistrarU(){
+            return view('gerenciaRegistrarUsuarios');
+        }
+
+        public function metodoActualizarU(){
+            return view('gerenciaActualizarUsuario');
+        }
+
+        //consultar y buscar usuarios
+        public function metodoConsultarU(){
+            return view('gerenciaConsultarUsuario');
+        }
+
+        public function metodoBuscarU(){
+            return view('gerenciaBuscarUsuario');
+        }
+
+
 }
