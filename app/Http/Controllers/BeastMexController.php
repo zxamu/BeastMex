@@ -9,8 +9,11 @@ use App\Http\Requests\validadorGerencia;
 use App\Http\Requests\validadorCoomprasBuscarProducto;
 use App\Http\Requests\validadorVentasConsultarTickets;
 use App\Http\Requests\validadorVentasCalculoGanancias;
-use App\Http\Requests\validadorAlmacenRegistro;
+#use App\Http\Requests\validadorAlmacenRegistro;
 use App\Http\Requests\validadorComprasRegistroProveedor;
+
+use App\Http\Requests\ALMACEN\validadorAlmacenRegistro;
+
 
 class BeastMexController extends Controller
 {
@@ -19,15 +22,15 @@ class BeastMexController extends Controller
     }
 
     public function metodoBuscarProductos(){
-        return view('comprasBuscarProductos');
+        return view('COMPRAS/comprasBuscarProductos');
     }
 
     public function metodoConsultarOC(){
-        return view('compraConsultarOrdenCompra');
+        return view('COMPRAS/compraConsultarOrdenCompra');
     }
 
     public function metodoRegistroProveedor(){
-        return view('comprasRegistroProveedores');
+        return view('COMPRAS/comprasRegistroProveedores');
     }
 
     public function metodoInicioSesion(validadorLogin $req){
@@ -58,7 +61,7 @@ class BeastMexController extends Controller
     // interfaz ventasConsultarproducto
 
     public function metodoMostrarproducto(){
-        return view('ventasConsultarproducto'); 
+        return view('VENTAS/ventasConsultarproducto'); 
         }       
     
         public function metodoBuscarproducto(validadorFormbeastmex $req){
@@ -71,7 +74,7 @@ class BeastMexController extends Controller
     //interfaz ventas Registrar tickets
     
         public function metodoRegistroVenta(){
-            return view('ventasRegistrartickets'); 
+            return view('VENTAS/ventasRegistrartickets'); 
         }
     
         public function metodoGuardartickets(validadorFormbeastmex $req){
@@ -84,7 +87,7 @@ class BeastMexController extends Controller
     //interfaz calculo de ganancias
     
         public function metodoCalculodeganancias(){
-        return view('ventasCalculodeganancias'); 
+        return view('VENTAS/ventasCalculodeganancias'); 
         }
     
         public function metodoMostrarcalculodegancnias(validadorVentasCalculoGanancias $req){
@@ -97,7 +100,7 @@ class BeastMexController extends Controller
     //interfaz Consultar tikects
     
         public function metodoConsultartickets(){
-            return view('ventasConsultartickets'); 
+            return view('VENTAS/ventasConsultartickets'); 
         }
     
         public function metodoMostrartickets(validadorVentasConsultarTickets $req){
@@ -117,19 +120,19 @@ class BeastMexController extends Controller
         //ALMACEN
 
         public function metodoRegistroProducto(){
-            return view('almacenRegistrarProducto');
+            return view('ALMACEN/almacenRegistrarProducto');
         }
     
         public function metodoActualizar(){
-            return view('almacenActualizar');
+            return view('ALMACEN/almacenActualizar');
         }
     
         public function metodoBuscar(){
-            return view('almacenBuscar');
+            return view('ALMACEN/almacenBuscar');
         }
     
         public function metodoConsultar(){
-            return view('almacenConsultar');
+            return view('ALMACEN/almacenConsultar');
         }
     
         public function metodoGuardarAR(validadorAlmacenRegistro $req){
@@ -146,7 +149,7 @@ class BeastMexController extends Controller
 
         //Gerencia
         public function metodoGerencia(){
-            return view('gerencia');
+            return view('GERENCIA/gerencia');
         }
 
         public function metodoGuardarUser(validadorGerencia $req){
@@ -157,34 +160,34 @@ class BeastMexController extends Controller
 
         //seccion de reportes
         public function metodoRV(){
-            return view('gerenciaReportesVentas');
+            return view('GERENCIA/gerenciaReportesVentas');
         }
 
         public function metodoRG(){
-            return view('gerenciaReportesGanancias');
+            return view('GERENCIA/gerenciaReportesGanancias');
         }
 
         public function metodoRC(){
-            return view('gerenciaReportesCompras');
+            return view('GERENCIA/gerenciaReportesCompras');
         }
 
         //registrar y actualizar usuarios
 
         public function metodoRegistrarU(){
-            return view('gerenciaRegistrarUsuarios');
+            return view('GERENCIA/gerenciaRegistrarUsuarios');
         }
 
         public function metodoActualizarU(){
-            return view('gerenciaActualizarUsuario');
+            return view('GERENCIA/gerenciaActualizarUsuario');
         }
 
         //consultar y buscar usuarios
         public function metodoConsultarU(){
-            return view('gerenciaConsultarUsuario');
+            return view('GERENCIA/gerenciaConsultarUsuario');
         }
 
         public function metodoBuscarU(){
-            return view('gerenciaBuscarUsuario');
+            return view('GERENCIA/gerenciaBuscarUsuario');
         }
 
 
