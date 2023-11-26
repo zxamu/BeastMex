@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\VENTAS\validadorVentasCalculoGanancias;
+use App\Http\Requests\VENTAS\validadorVentasConsultarTickets;
+use App\Http\Requests\VENTAS\validadorVentasRegistro;
 
 class controladorVentas extends Controller
 {

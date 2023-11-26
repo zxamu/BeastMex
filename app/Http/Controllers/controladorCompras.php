@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\COMPRAS\validadorComprasRegistroProveedor;
+use App\Http\Requests\COMPRAS\validadorCoomprasBuscarProducto;
 
 class controladorCompras extends Controller
 {
