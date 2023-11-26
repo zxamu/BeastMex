@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeastMexController;
 
+use App\Http\Controllers\controladorAlmacen;
+use App\Http\Controllers\controladorCompras;
+use App\Http\Controllers\controladorGerencia;
+use App\Http\Controllers\controladorVentas;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,69 +24,69 @@ use App\Http\Controllers\BeastMexController;
 }); */
 
 //COMPRAS
-Route::get('/', [BeastMexController::class, 'metodoLogin']);
+Route::get('/', [controladorCompras::class, 'metodoLogin']);
 
-Route::get('/compraConsultarOrdenCompra', [BeastMexController::class, 'metodoConsultarOC']);
+Route::get('/compraConsultarOrdenCompra', [controladorCompras::class, 'metodoConsultarOC']);
 
-Route::get('/comprasBuscarProductos', [BeastMexController::class, 'metodoBuscarProductos']);
+Route::get('/comprasBuscarProductos', [controladorCompras::class, 'metodoBuscarProductos']);
 
-Route::get('/comprasRegistroProveedores', [BeastMexController::class, 'metodoRegistroProveedor']);
+Route::get('/comprasRegistroProveedores', [controladorCompras::class, 'metodoRegistroProveedor']);
 
 //Crear una ruta tipo POST
 Route::post('/pLogin', [BeastMexController::class, 'metodoInicioSesion']);
 
-Route::post('/pBuscarProductos', [BeastMexController::class, 'metodoComprasBP']);
+Route::post('/pBuscarProductos', [controladorCompras::class, 'metodoComprasBP']);
 
-Route::post('/pRegistrarProveedor', [BeastMexController::class, 'metodoRegistroP']);
+Route::post('/pRegistrarProveedor', [controladorCompras::class, 'metodoRegistroP']);
 
 //ALMACEN
-Route::get('/almacenRegistrarProducto',[BeastMexController::class,'metodoRegistroProducto'])->name('paginaActualizar');
-Route::get('/almacenActualizar',[BeastMexController::class,'metodoActualizar'])->name('paginaActualizar');
-Route::get('/almacenBuscar',[BeastMexController::class,'metodoBuscar'])->name('paginaBuscar');
-Route::get('/almacenConsultar',[BeastMexController::class,'metodoConsultar'])->name('paginaConsultar');
-Route::post('/guardarRegistro',[BeastMexController::class,'metodoGuardarAR'])->name('Guardar');
-Route::post('/guardarRegistroAct',[BeastMexController::class,'metodoGuardarAct'])->name('GuardarAct');
+Route::get('/almacenRegistrarProducto',[controladorAlmacen::class,'metodoRegistroProducto'])->name('paginaActualizar');
+Route::get('/almacenActualizar',[controladorAlmacen::class,'metodoActualizar'])->name('paginaActualizar');
+Route::get('/almacenBuscar',[controladorAlmacen::class,'metodoBuscar'])->name('paginaBuscar');
+Route::get('/almacenConsultar',[controladorAlmacen::class,'metodoConsultar'])->name('paginaConsultar');
+Route::post('/guardarRegistro',[controladorAlmacen::class,'metodoGuardarAR'])->name('Guardar');
+Route::post('/guardarRegistroAct',[controladorAlmacen::class,'metodoGuardarAct'])->name('GuardarAct');
 
 //VENTAS
 
 //interfaz de ventas consultar productos
-Route::get('/ventasConsultarproducto',[BeastMexController::class,'metodoMostrarproducto'])->name('Mostrarproducto');
+Route::get('/ventasConsultarproducto',[controladorVentas::class,'metodoMostrarproducto'])->name('Mostrarproducto');
 
-Route::post('/Buscarproducto',[BeastMexController::class,'metodoBuscarproducto'])->name('Buscarproducto');
+Route::post('/Buscarproducto',[controladorVentas::class,'metodoBuscarproducto'])->name('Buscarproducto');
 
 // interfaz de ventas resgistrar tickets
-Route::get('/ventasRegistrartickets',[BeastMexController::class,'metodoRegistroVenta'])->name('Registroventa');
+Route::get('/ventasRegistrartickets',[controladorVentas::class,'metodoRegistroVenta'])->name('Registroventa');
 
-Route::post('/Guardartickets',[BeastMexController::class,'metodoGuardartickets'])->name('Guardartickets');
+Route::post('/Guardartickets',[controladorVentas::class,'metodoGuardartickets'])->name('Guardartickets');
 
 // interfaz de ventas calculo de ganancias
-Route::get('/ventasCalculodeganancias',[BeastMexController::class,'metodoCalculodeganancias'])->name('Calculodeganancias');
+Route::get('/ventasCalculodeganancias',[controladorVentas::class,'metodoCalculodeganancias'])->name('Calculodeganancias');
 
-Route::post('/Mostrarcalculodegancnias',[BeastMexController::class,'metodoMostrarcalculodegancnias'])->name('Mostrarcalculodegancnias');
+Route::post('/Mostrarcalculodegancnias',[controladorVentas::class,'metodoMostrarcalculodegancnias'])->name('Mostrarcalculodegancnias');
 
 // interfaz de ventas consultar tikets
-Route::get('/ventasConsultartickets',[BeastMexController::class,'metodoConsultartickets'])->name('Consultartickets');
+Route::get('/ventasConsultartickets',[controladorVentas::class,'metodoConsultartickets'])->name('Consultartickets');
 
-Route::post('/Mostrartickets',[BeastMexController::class,'metodoMostrartickets'])->name('Mostrartickets');
+Route::post('/Mostrartickets',[controladorVentas::class,'metodoMostrartickets'])->name('Mostrartickets');
 // imprimir tikets
-Route::post('/Imprimirtickets',[BeastMexController::class,'metodoImprimirtickets'])->name('Imprimirtickets');
+Route::post('/Imprimirtickets',[controladorVentas::class,'metodoImprimirtickets'])->name('Imprimirtickets');
 
 
 //GERENCIA
 
-Route::get('/gerencia',[BeastMexController::class,'metodoGerencia'])->name('Gerencia');
-Route::post('/guardarU', [BeastMexController::class, 'metodoGuardarUser']);
+Route::get('/gerencia',[controladorGerencia::class,'metodoGerencia'])->name('Gerencia');
+Route::post('/guardarU', [controladorGerencia::class, 'metodoGuardarUser']);
 
 //seccion de reportes
-Route::get('/gerenciaReportesVentas',[BeastMexController::class,'metodoRV']);
-Route::get('/gerenciaReportesGanancias',[BeastMexController::class,'metodoRG']);
-Route::get('/gerenciaReportesCompras',[BeastMexController::class,'metodoRC']);
+Route::get('/gerenciaReportesVentas',[controladorGerencia::class,'metodoRV']);
+Route::get('/gerenciaReportesGanancias',[controladorGerencia::class,'metodoRG']);
+Route::get('/gerenciaReportesCompras',[controladorGerencia::class,'metodoRC']);
 
 //registro y actualizar usuario
 
-Route::get('/gerenciaRegistrarUsuario',[BeastMexController::class,'metodoRegistrarU']);
-Route::get('/gerenciaActualizarUsuario',[BeastMexController::class,'metodoActualizarU']);
+Route::get('/gerenciaRegistrarUsuario',[controladorGerencia::class,'metodoRegistrarU']);
+Route::get('/gerenciaActualizarUsuario',[controladorGerencia::class,'metodoActualizarU']);
 
 //consultar y buscar
-Route::get('/gerenciaConsultarUsuario',[BeastMexController::class,'metodoConsultarU']);
-Route::get('/gerenciaBuscarUsuario',[BeastMexController::class,'metodoBuscarU']);
+Route::get('/gerenciaConsultarUsuario',[controladorGerencia::class,'metodoConsultarU']);
+Route::get('/gerenciaBuscarUsuario',[controladorGerencia::class,'metodoBuscarU']);
