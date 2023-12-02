@@ -46,6 +46,8 @@
               VENTAS
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/ventasConsultarproducto">Consultar Producto</a></li>
+              <li><a class="dropdown-item" href="/ventasRegistrartickets">Registrar Ticket</a></li>
               <li><a class="dropdown-item" href="/ventasConsultartickets">Consultar tickets</a></li>
               <li><a class="dropdown-item" href="/ventasCalculodeganancias">Calculo de ganancias</a></li>
             </ul>

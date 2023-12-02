@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\controllerVentas;
 use Illuminate\Http\Request;
+use App\Http\Request\validador\validadorVentasRegistro;
+use BD;
+use Carbon\Carbon;
 
 class controllerVentas extends Controller
 {
@@ -19,15 +23,18 @@ class controllerVentas extends Controller
      */
     public function create()
     {
-        //
+        return view('ventasRegistrartickets');
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(validadorVentasregistro $request)
     {
-        //
+        DB::table('registro_tickets')-> insert ([
+
+        ]);
     }
 
     /**

@@ -18,7 +18,7 @@ class controladorVentas extends Controller
     
         public function metodoBuscarproducto(validadorFormbeastmex $req){
     
-            Alert::success('Buscarproducto','Tu registro ha sido exitoso')->persistent(true);
+            //Alert::success('Buscarproducto','Tu registro ha sido exitoso')->persistent(true);
     
             return redirect('/ventasConsultarproducto')->with('confirmacion','Mostrar productos');
         }

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
 class validadorVentasRegistro extends FormRequest
 {
     /**
@@ -22,7 +23,15 @@ class validadorVentasRegistro extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'txtFecha' => 'required|date',
+            'txtNombre' => 'required|string',
+            'txtAP' => 'required|string',
+            'txtAM' => 'required|string',
+            'txtNombreProducto' => 'required',
+            'txtMarca' => 'required',
+            'txtCantidad' => 'required|number',
+            'txtPrecio' => 'required|number',
+            'txtTotalcompra' => 'required|number',
         ];
     }
 }

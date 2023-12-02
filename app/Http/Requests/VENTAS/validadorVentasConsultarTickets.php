@@ -22,7 +22,7 @@ class validadorVentasConsultarTickets extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'txtFecha' => 'required|date',
         ];
     }
 }
