@@ -24,7 +24,7 @@ use App\Http\Controllers\controladorVentas;
 }); */
 
 //COMPRAS
-Route::get('/', [controladorCompras::class, 'metodoLogin']);
+Route::get('/', [BeastMexController::class, 'metodoLogin']);
 
 Route::get('/compraConsultarOrdenCompra', [controladorCompras::class, 'metodoConsultarOC']);
 
