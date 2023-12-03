@@ -1,8 +1,10 @@
-@extends('layouts.plantilla')
+@extends('layouts.app')
 
 @section('titulo', 'Concultar producto')
 
 @section('contenido')
+
+@include('partials.navbar')
 
 <div class="container">
   @if(session()->has('confirmacion'))

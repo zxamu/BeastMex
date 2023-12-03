@@ -23,73 +23,77 @@ use App\Http\Controllers\controladorVentas;
     return view('welcome');
 }); */
 
+Auth::routes();
+
+Route::get('/home', [BeastMexController::class, 'index'])->middleware('auth');
+
 //COMPRAS
-Route::get('/', [BeastMexController::class, 'metodoLogin']);
+Route::get('/', [BeastMexController::class, 'index'])->middleware('auth');
 
-Route::get('/compraConsultarOrdenCompra', [controladorCompras::class, 'metodoConsultarOC']);
+Route::get('/compraConsultarOrdenCompra', [controladorCompras::class, 'metodoConsultarOC'])->middleware('auth');
 
-Route::get('/comprasBuscarProductos', [controladorCompras::class, 'metodoBuscarProductos']);
 
-Route::get('/comprasRegistroProveedores', [controladorCompras::class, 'metodoRegistroProveedor']);
+Route::get('/comprasBuscarProductos', [controladorCompras::class, 'metodoBuscarProductos'])->middleware('auth');
 
-//Crear una ruta tipo POST
-Route::post('/pLogin', [BeastMexController::class, 'metodoInicioSesion']);
 
-Route::post('/pBuscarProductos', [controladorCompras::class, 'metodoComprasBP']);
+Route::get('/comprasRegistroProveedores', [controladorCompras::class, 'metodoRegistroProveedor'])->middleware('auth');
 
-Route::post('/pRegistrarProveedor', [controladorCompras::class, 'metodoRegistroP']);
+
+Route::post('/pBuscarProductos', [controladorCompras::class, 'metodoComprasBP'])->middleware('auth');
+
+Route::post('/pRegistrarProveedor', [controladorCompras::class, 'metodoRegistroP'])->middleware('auth');
 
 //ALMACEN
-Route::get('/almacenRegistrarProducto',[controladorAlmacen::class,'metodoRegistroProducto'])->name('paginaActualizar');
-Route::get('/almacenActualizar',[controladorAlmacen::class,'metodoActualizar'])->name('paginaActualizar');
-Route::get('/almacenBuscar',[controladorAlmacen::class,'metodoBuscar'])->name('paginaBuscar');
-Route::get('/almacenConsultar',[controladorAlmacen::class,'metodoConsultar'])->name('paginaConsultar');
-Route::post('/guardarRegistro',[controladorAlmacen::class,'metodoGuardarAR'])->name('Guardar');
-Route::post('/guardarRegistroAct',[controladorAlmacen::class,'metodoGuardarAct'])->name('GuardarAct');
+Route::get('/almacenRegistrarProducto',[controladorAlmacen::class,'metodoRegistroProducto'])->name('paginaActualizar')->middleware('auth');
+Route::get('/almacenActualizar',[controladorAlmacen::class,'metodoActualizar'])->name('paginaActualizar')->middleware('auth');
+Route::get('/almacenBuscar',[controladorAlmacen::class,'metodoBuscar'])->name('paginaBuscar')->middleware('auth');
+Route::get('/almacenConsultar',[controladorAlmacen::class,'metodoConsultar'])->name('paginaConsultar')->middleware('auth');
+Route::post('/guardarRegistro',[controladorAlmacen::class,'metodoGuardarAR'])->name('Guardar')->middleware('auth');
+Route::post('/guardarRegistroAct',[controladorAlmacen::class,'metodoGuardarAct'])->name('GuardarAct')->middleware('auth');
 
 //VENTAS
 
 //interfaz de ventas consultar productos
-Route::get('/ventasConsultarproducto',[controladorVentas::class,'metodoMostrarproducto'])->name('Mostrarproducto');
+Route::get('/ventasConsultarproducto',[controladorVentas::class,'metodoMostrarproducto'])->name('Mostrarproducto')->middleware('auth');
 
-Route::post('/Buscarproducto',[controladorVentas::class,'metodoBuscarproducto'])->name('Buscarproducto');
+Route::post('/Buscarproducto',[controladorVentas::class,'metodoBuscarproducto'])->name('Buscarproducto')->middleware('auth');
 
 // interfaz de ventas resgistrar tickets
-Route::get('/ventasRegistrartickets',[controladorVentas::class,'metodoRegistroVenta'])->name('Registroventa');
+Route::get('/ventasRegistrartickets',[controladorVentas::class,'metodoRegistroVenta'])->name('Registroventa')->middleware('auth');
 
-Route::post('/Guardartickets',[controladorVentas::class,'metodoGuardartickets'])->name('Guardartickets');
+Route::post('/Guardartickets',[controladorVentas::class,'metodoGuardartickets'])->name('Guardartickets')->middleware('auth');
 
 // interfaz de ventas calculo de ganancias
-Route::get('/ventasCalculodeganancias',[controladorVentas::class,'metodoCalculodeganancias'])->name('Calculodeganancias');
+Route::get('/ventasCalculodeganancias',[controladorVentas::class,'metodoCalculodeganancias'])->name('Calculodeganancias')->middleware('auth');
 
-Route::post('/Mostrarcalculodegancnias',[controladorVentas::class,'metodoMostrarcalculodegancnias'])->name('Mostrarcalculodegancnias');
+Route::post('/Mostrarcalculodegancnias',[controladorVentas::class,'metodoMostrarcalculodegancnias'])->name('Mostrarcalculodegancnias')->middleware('auth');
 
 // interfaz de ventas consultar tikets
-Route::get('/ventasConsultartickets',[controladorVentas::class,'metodoConsultartickets'])->name('Consultartickets');
+Route::get('/ventasConsultartickets',[controladorVentas::class,'metodoConsultartickets'])->name('Consultartickets')->middleware('auth');
 
-Route::post('/Mostrartickets',[controladorVentas::class,'metodoMostrartickets'])->name('Mostrartickets');
+Route::post('/Mostrartickets',[controladorVentas::class,'metodoMostrartickets'])->name('Mostrartickets')->middleware('auth');
 // imprimir tikets
-Route::post('/Imprimirtickets',[controladorVentas::class,'metodoImprimirtickets'])->name('Imprimirtickets');
+Route::post('/Imprimirtickets',[controladorVentas::class,'metodoImprimirtickets'])->name('Imprimirtickets')->middleware('auth');
 
 
 //GERENCIA
 
-Route::get('/gerencia',[controladorGerencia::class,'metodoGerencia'])->name('Gerencia');
-Route::post('/guardarU', [controladorGerencia::class, 'metodoGuardarUser']);
+Route::get('/gerencia',[controladorGerencia::class,'metodoGerencia'])->name('Gerencia')->middleware('auth');
+Route::post('/guardarU', [controladorGerencia::class, 'metodoGuardarUser'])->middleware('auth');
 
 //seccion de reportes
-Route::get('/gerenciaReportesVentas',[controladorGerencia::class,'metodoRV']);
-Route::get('/gerenciaReportesGanancias',[controladorGerencia::class,'metodoRG']);
-Route::get('/gerenciaReportesCompras',[controladorGerencia::class,'metodoRC']);
+Route::get('/gerenciaReportesVentas',[controladorGerencia::class,'metodoRV'])->middleware('auth');
+Route::get('/gerenciaReportesGanancias',[controladorGerencia::class,'metodoRG'])->middleware('auth');
+Route::get('/gerenciaReportesCompras',[controladorGerencia::class,'metodoRC'])->middleware('auth');
 
 //registro y actualizar usuario
 
-Route::get('/gerenciaRegistrarUsuario',[controladorGerencia::class,'metodoRegistrarU']);
-Route::get('/gerenciaActualizarUsuario',[controladorGerencia::class,'metodoActualizarU']);
+Route::get('/gerenciaRegistrarUsuario',[controladorGerencia::class,'metodoRegistrarU'])->middleware('auth');
+Route::get('/gerenciaActualizarUsuario',[controladorGerencia::class,'metodoActualizarU'])->middleware('auth');
 
 //consultar y buscar
-Route::get('/gerenciaConsultarUsuario',[controladorGerencia::class,'metodoConsultarU']);
-Route::get('/gerenciaBuscarUsuario',[controladorGerencia::class,'metodoBuscarU']);
+Route::get('/gerenciaConsultarUsuario',[controladorGerencia::class,'metodoConsultarU'])->middleware('auth');
+Route::get('/gerenciaBuscarUsuario',[controladorGerencia::class,'metodoBuscarU'])->middleware('auth');
 
 /* Auth::routes();
 

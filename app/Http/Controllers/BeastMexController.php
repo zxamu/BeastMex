@@ -17,7 +17,7 @@ use App\Http\Requests\ALMACEN\validadorAlmacenRegistro;
 
 class BeastMexController extends Controller
 {
-    public function metodoLogin(){
+    public function index(){
         return view('login');
     }
 
@@ -31,14 +31,6 @@ class BeastMexController extends Controller
 
     public function metodoRegistroProveedor(){
         return view('COMPRAS/comprasRegistroProveedores');
-    }
-
-    public function metodoInicioSesion(validadorLogin $req){
-        //return 'Se esta procesando tu inicio de sesion';
-        //return 'Se esta procesando tu busqueda de producto';
-        //Alert::success('Inicio de sesion','Haz iniciado sesion')->persistent(true);
-
-        return redirect('/')->with('Inicio de sesion', 'Se esta procesando tu inicio de sesion');
     }
 
     public function metodoComprasBP(validadorCoomprasBuscarProducto $req){

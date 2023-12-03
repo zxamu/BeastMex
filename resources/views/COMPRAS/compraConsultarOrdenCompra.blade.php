@@ -1,9 +1,10 @@
-@extends('layouts.plantilla')
+@extends('layouts.app')
 
 @section('titulo','Principal')
 
 @section('contenido')
 
+@include('partials.navbar')
 
 <div class="container mt-5 col-md-6">
     <p class="fw-bolder fs-3 text-center">COMPRAS</p>
