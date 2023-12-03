@@ -90,3 +90,7 @@ Route::get('/gerenciaActualizarUsuario',[controladorGerencia::class,'metodoActua
 //consultar y buscar
 Route::get('/gerenciaConsultarUsuario',[controladorGerencia::class,'metodoConsultarU']);
 Route::get('/gerenciaBuscarUsuario',[controladorGerencia::class,'metodoBuscarU']);
+
+/* Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
