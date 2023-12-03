@@ -12,7 +12,7 @@ class VentasController extends Controller
      */
     public function index()
     {
-        $consulventas = beastmexes::all();
+        $consulventas = ventas::all();
         return view('ventasConsultarproducto.index', compact('consulventas'));
     }
 
