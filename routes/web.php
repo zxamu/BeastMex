@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeastMexController;
 
+use App\Http\Controllers\VentasController;
 use App\Http\Controllers\controladorAlmacen;
 use App\Http\Controllers\controladorCompras;
 use App\Http\Controllers\controladorGerencia;
-use App\Http\Controllers\controladorVentas;
+//use App\Http\Controllers\controladorVentas;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ use App\Http\Controllers\controladorVentas;
 }); */
 
 //COMPRAS
-Route::get('/', [controladorCompras::class, 'metodoLogin']);
+//Route::get('/', [controladorCompras::class, 'metodoLogin']);
 
 Route::get('/compraConsultarOrdenCompra', [controladorCompras::class, 'metodoConsultarOC']);
 
@@ -47,15 +48,21 @@ Route::get('/almacenConsultar',[controladorAlmacen::class,'metodoConsultar'])->n
 Route::post('/guardarRegistro',[controladorAlmacen::class,'metodoGuardarAR'])->name('Guardar');
 Route::post('/guardarRegistroAct',[controladorAlmacen::class,'metodoGuardarAct'])->name('GuardarAct');
 
+
 //VENTAS
 
-//interfaz de ventas consultar productos
-Route::get('/ventasConsultarproducto',[controladorVentas::class,'metodoMostrarproducto'])->name('Mostrarproducto');
+Auth::routes();
 
-Route::post('/Buscarproducto',[controladorVentas::class,'metodoBuscarproducto'])->name('Buscarproducto');
+Route::resource('home',VentasController::class);
+
+Route::resource('/ventasConsultarproducto',VentasController::class);
+
+//interfaz de ventas consultar productos
+Route::get('/ventasConsultarproducto/create',[VentasController::class,'create'])->name('ventasConsultarproducto.create');
+Route::post('/ventasConsultarproducto/index',[VentasController::class,'index'])->name('ventasConsultarproducto.index');
 
 // interfaz de ventas resgistrar tickets
-Route::get('/ventasRegistrartickets',[controladorVentas::class,'metodoRegistroVenta'])->name('Registroventa');
+Route::get('/ventasRegistrartickets',[controllerVentas::class,'metodoRegistroVenta'])->name('Registroventa');
 
 Route::post('/Guardartickets',[controladorVentas::class,'metodoGuardartickets'])->name('Guardartickets');
 
@@ -90,3 +97,6 @@ Route::get('/gerenciaActualizarUsuario',[controladorGerencia::class,'metodoActua
 //consultar y buscar
 Route::get('/gerenciaConsultarUsuario',[controladorGerencia::class,'metodoConsultarU']);
 Route::get('/gerenciaBuscarUsuario',[controladorGerencia::class,'metodoBuscarU']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

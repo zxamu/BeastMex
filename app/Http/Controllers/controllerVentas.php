@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\controllerVentas;
 use Illuminate\Http\Request;
 use App\Http\Request\validador\validadorVentasRegistro;
-use BD;
+use DB;
 use Carbon\Carbon;
 
 class controllerVentas extends Controller
@@ -15,26 +15,35 @@ class controllerVentas extends Controller
      */
     public function index()
     {
-        //
-    }
+        $consulventas = ventas::all();
+        return view('ventasConsultarproducto.index', compact('consulventas'));
+    }    
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('ventasRegistrartickets');
+        return view('VENTAS/ventasConsultarproducto');
 
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(validadorVentasregistro $request)
+    public function store(validadorVentasConsultarProductos $request)
     {
         DB::table('registro_tickets')-> insert ([
-
+            "nombre_producto"=>$request->string('txtNombre'),
+            "no_serie"=>$request->string('txtSerie'),
+            "marca"=>$request->string('txtMarca'),
+            "cantidad"=>$request->int('txtCantidad'),
+            "costo"=>$request->decimal('txtCosto'),
+            "compra"=>$request->decimal('txtcompra'),
+            "precio_venta"=>$request->decimal('txtPrecio'),
+            "fecha_ingreso"=>carbon::now('txtFecha'),
         ]);
+        return redirect('/ventasConsultarproducto/create')->with('confirmacion','llego al controlador');
     }
 
     /**
@@ -42,7 +51,7 @@ class controllerVentas extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -66,6 +75,6 @@ class controllerVentas extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
     }
 }
