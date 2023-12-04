@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -130,6 +131,34 @@ return new class extends Migration
             $table->string('contraseña');
         });
 
+        // Insertar cuatro usuarios
+        DB::table('Usuarios')->insert([
+            [
+                'id_persona' => 1,
+                'correo' => 'gerente@example.com',
+                'id_puesto' => 1,
+                'contraseña' => bcrypt('contraseña1'),
+            ],
+            [
+                'id_persona' => 2,
+                'correo' => 'compras@example.com',
+                'id_puesto' => 2,
+                'contraseña' => bcrypt('contraseña2'),
+            ],
+            [
+                'id_persona' => 3,
+                'correo' => 'ventas@example.com',
+                'id_puesto' => 3,
+                'contraseña' => bcrypt('contraseña3'),
+            ],
+            [
+                'id_persona' => 4,
+                'correo' => 'almacen@example.com',
+                'id_puesto' => 4,
+                'contraseña' => bcrypt('contraseña4'),
+            ],
+        ]);
+
         // Tabla: Puestos
         Schema::create('Puestos', function (Blueprint $table) {
             $table->id('id_puestos');
@@ -140,21 +169,21 @@ return new class extends Migration
     public function down(): void
     {
         // Reversión de las tablas
-        Schema::dropIfExists('beastmexes');
-        Schema::dropIfExists('estados');
-        Schema::dropIfExists('municipios');
-        Schema::dropIfExists('colonias');
-        Schema::dropIfExists('calles');
-        Schema::dropIfExists('productos');
-        Schema::dropIfExists('desc_repor_product');
-        Schema::dropIfExists('personas');
-        Schema::dropIfExists('empresas');
         Schema::dropIfExists('domicilios');
+        Schema::dropIfExists('calles');
+        Schema::dropIfExists('colonias');
+        Schema::dropIfExists('municipios');
+        Schema::dropIfExists('estados');
+        Schema::dropIfExists('desc_repor_product');
         Schema::dropIfExists('orden_compras');
-        Schema::dropIfExists('registros_tickets');
+        Schema::dropIfExists('productos');
+        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('personas');
         Schema::dropIfExists('desc_tickets');
+        Schema::dropIfExists('registros_tickets');
         Schema::dropIfExists('ganancias');
         Schema::dropIfExists('Usuarios');
         Schema::dropIfExists('Puestos');
+        Schema::dropIfExists('beastmexes');
     }
 };

@@ -11,6 +11,8 @@
           {{-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li> --}}
+
+          @can('ver-gerencia')
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               GERENCIA
@@ -28,7 +30,9 @@
               <li><a class="dropdown-item" href="/gerenciaReportesGanancias">Reportes ganancias</a></li>
             </ul>
           </li>
-  
+          @endcan
+          
+          @can('ver-compras')
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               COMPRAS
@@ -39,7 +43,9 @@
               <li><a class="dropdown-item" href="/comprasBuscarProductos">Buscar productos</a></li>
             </ul>
           </li>
-  
+          @endcan
+
+          @can('ver-ventas')
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               VENTAS
@@ -49,7 +55,9 @@
               <li><a class="dropdown-item" href="/ventasCalculodeganancias">Calculo de ganancias</a></li>
             </ul>
           </li>
-  
+          @endcan
+
+          @can('ver-almacen')
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               ALMACEN
@@ -61,6 +69,7 @@
               <li><a class="dropdown-item" href="/almacenBuscar">Buscar productos</a></li>
               </ul>
           </li>
+          @endcan
           
         </ul>
         <form class="d-flex" role="search">

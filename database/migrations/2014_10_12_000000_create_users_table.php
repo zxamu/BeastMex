@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+
 
 return new class extends Migration
 {
@@ -20,6 +22,38 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        // Insertar cuatro usuarios
+        DB::table('users')->insert([
+            [
+                'id' => 1,
+                'name' => 'Gerente',
+                'email' => 'gerente@example.com',
+                'email_verified_at' => now(),
+                'password' => bcrypt('contraseña1'),
+            ],
+            [
+                'id' => 2,
+                'name' => 'Compras',
+                'email' => 'compras@example.com',
+                'email_verified_at' => now(),
+                'password' => bcrypt('contraseña2'),
+            ],
+            [
+                'id' => 3,
+                'name' => 'Ventas',
+                'email' => 'ventas@example.com',
+                'email_verified_at' => now(),
+                'password' => bcrypt('contraseña3'),
+            ],
+            [
+                'id' => 4,
+                'name' => 'Almacen',
+                'email' => 'almacen@example.com',
+                'email_verified_at' => now(),
+                'password' => bcrypt('contraseña4'),
+            ],
+        ]);
     }
 
     /**
