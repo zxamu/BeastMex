@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\VENTAS\validadorVentasCalculoGanancias;
-use App\Http\Requests\VENTAS\validadorVentasConsultarTickets;
-use App\Http\Requests\VENTAS\validadorVentasRegistro;
-use App\Http\Requests\VENTAS\validadorVentasConsultarProductos; // Asegúrate de que el nombre del archivo coincida con la clase
-use App\Http\Requests\VENTAS\validadorventaProducto;
+use App\Http\Requests\validadorVentasCalculoGanancias;
+use App\Http\Requests\validadorVentasConsultarTickets;
+use App\Http\Requests\validadorVentasRegistro;
+use App\Http\Requests\validadorVentasConsultarProductos; // Asegúrate de que el nombre del archivo coincida con la clase
+use App\Http\Requests\validadorventaProducto;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
