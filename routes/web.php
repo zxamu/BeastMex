@@ -124,3 +124,30 @@ Route::get('/gerenciaBuscarUsuario',[controladorGerencia::class,'metodoBuscarU']
 /* Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
+
+//VENTAS
+
+//interfaz de ventas consultar productos
+Route::get('/ventasConsultarproducto',[controladorVentas::class,'metodoMostrarproducto'])->name('ventasConsultarproducto');
+Route::post('/Buscarproducto',[controladorVentas::class,'metodoBuscarproducto'])->name('Buscarproducto');
+Route::post('/ventasConsultarproducto/{id_producto}/confirm', [controladorVentas::class, 'update'])->name('actualizarProducto');
+Route::delete('/ventasConsultarproducto/{id_producto}/delete', [controladorVentas::class, 'delete'])->name('recuerdo.delete');
+
+// interfaz de ventas resgistrar tickets
+//Route::get('/ventasRegistrartickets',[controladorVentas::class,'metodoRegistroVenta'])->name('Registroventa');
+//Route::post('/Guardartickets',[controladorVentas::class,'metodoGuardartickets'])->name('Guardartickets');
+Route::post('/agregarAListaCompra', [controladorVentas::class, 'agregarAListaCompra'])->name('agregarAListaCompra');
+Route::post('/generarTicketCompra', [controladorVentas::class,'generarTicketCompra'])->name('generarTicketCompra');
+
+
+// interfaz de ventas calculo de ganancias
+Route::get('/ventasCalculodeganancias',[controladorVentas::class,'metodoCalculodeganancias'])->name('Calculodeganancias');
+
+Route::post('/Mostrarcalculodegancnias',[controladorVentas::class,'metodoMostrarcalculodegancnias'])->name('Mostrarcalculodegancnias');
+
+// interfaz de ventas consultar tikets
+Route::get('/ventasConsultartickets',[controladorVentas::class,'metodoConsultartickets'])->name('Consultartickets');
+
+Route::post('/Mostrartickets',[controladorVentas::class,'metodoMostrartickets'])->name('Mostrartickets');
+// imprimir tikets
+Route::post('/Imprimirtickets',[controladorVentas::class,'metodoImprimirtickets'])->name('Imprimirtickets');
