@@ -29,8 +29,8 @@ class validadorComprasRegistroProveedor extends FormRequest
             'txtRZ' => 'required',
             'txtCalle' => 'required',
             'txtColonia' => 'required',
-            'txtNumero' => 'required|number',
-            'txtTel' => 'required|number|max:10',
+            'txtNumero' => 'required|numeric',
+            'txtTel' => 'required|numeric',
             'txtCorreo' => 'required|email',
         ];
     }

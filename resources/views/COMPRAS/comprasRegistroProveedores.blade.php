@@ -29,8 +29,9 @@
   
         @endforeach
     @endif
+    
   <p class="fw-medium fs-5 text-center">- Datos personales -</p>
-  <form method="POST" action="/pRegistrarProveedor">
+  <form method="POST" action="/proveedor">
     @csrf
       <div class="input-group mb-3">
         <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
@@ -96,6 +97,22 @@
         <div class="form-floating">
           <input type="text" name="txtNumero" class="form-control" placeholder="Numero">
           <label for="floatingInputGroup1">Numero</label>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>
+        <div class="form-floating">
+          <input type="text" name="txtEstado" class="form-control" placeholder="Estado">
+          <label for="floatingInputGroup1">Estado</label>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>
+        <div class="form-floating">
+          <input type="text" name="txtMunicipio" class="form-control" placeholder="Municipio">
+          <label for="floatingInputGroup1">Municipio</label>
         </div>
       </div>
 

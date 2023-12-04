@@ -15,29 +15,33 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">No. Orden de compra</th>
+        <th scope="col">Folio de orden de compra</th>
         <th scope="col">Acciones</th>
-        <th scope="col">Handle</th>
       </tr>
     </thead>
-    <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+        <tr>
+          @foreach ($consulOC as $item)
+        <tr>
+          <th scope="row">{{$item->id_producto}}</th>
+          <td>{{$item->folio}}</td>        
+          <td>
+  
+              <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-list-stars"></i> Opciones
+                  </button>
+                  <ul class="dropdown-menu">
+                      <button type="button" class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="{{route('oc.generarOrdenCompra',$item->id_producto)}}">
+                          <i class="bi bi-pencil-square"></i> - Descargar PDF 
+                      </button>
+                  </ul>
+              </div>
+  
+          </td>
+
+        </tr>
+        @endforeach
     </tbody>
 </table>
 </div>

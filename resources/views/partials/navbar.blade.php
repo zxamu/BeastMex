@@ -35,9 +35,10 @@
               COMPRAS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/comprasRegistroProveedores">Registrar proveedor</a></li>
-              <li><a class="dropdown-item" href="/compraConsultarOrdenCompra">Consultar orden de compra</a></li>
-              <li><a class="dropdown-item" href="/comprasBuscarProductos">Buscar productos</a></li>
+              <li><a class="dropdown-item" href="/proveedor/create">Registrar proveedor</a></li>
+              <li><a class="dropdown-item" href="{{route('proveedor.index')}}">Consultar proveedor</a></li>
+              <li><a class="dropdown-item" href="{{ route('oc.index') }}">Consultar orden de compra</a></li>
+              <li><a class="dropdown-item" href="{{ route('prod.index') }}">Buscar productos</a></li>
             </ul>
           </li>
   
