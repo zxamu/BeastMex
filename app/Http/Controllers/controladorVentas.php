@@ -51,7 +51,7 @@ class controladorVentas extends Controller
             "fecha_ingreso" => Carbon::now(),
         ]);
 
-        return redirect('/ventasConsultarproducto');
+        return redirect('/editar')->with('mensaje', 'Producto eliminado con éxito');
     }
     //eliminar
     public function delete($id)

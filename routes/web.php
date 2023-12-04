@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BeastMexController;
+use App\Http\Controllers\Auth\BeastMexController;
 
 use App\Http\Controllers\controladorAlmacen;
 use App\Http\Controllers\controladorCompras;
@@ -11,6 +11,8 @@ use App\Http\Controllers\controladorVentas;
 use App\Http\Controllers\comprasCRUD;
 use App\Http\Controllers\productosCRUD;
 use App\Http\Controllers\ordenCompraCRUD;
+
+use App\Http\Controllers\AlmacenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,8 @@ use App\Http\Controllers\ordenCompraCRUD;
 }); */
 
 //COMPRAS
-Route::get('/', [BeastMexController::class, 'metodoLogin']);
+
+Route::get('/home', [BeastMexController::class, 'index']);
 
 /* Route::get('/compraConsultarOrdenCompra', [controladorCompras::class, 'metodoConsultarOC']);
 
@@ -129,8 +132,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //interfaz de ventas consultar productos
 Route::get('/ventasConsultarproducto',[controladorVentas::class,'metodoMostrarproducto'])->name('ventasConsultarproducto');
-Route::post('/Buscarproducto',[controladorVentas::class,'metodoBuscarproducto'])->name('Buscarproducto');
-Route::post('/ventasConsultarproducto/{id_producto}/confirm', [controladorVentas::class, 'update'])->name('actualizarProducto');
+Route::get('/Buscarproducto',[controladorVentas::class,'metodoBuscarproducto'])->name('Buscarproducto');
+Route::post('/editar/{id_producto}/confirm', [controladorVentas::class, 'update'])->name('actualizarProducto');
 Route::delete('/ventasConsultarproducto/{id_producto}/delete', [controladorVentas::class, 'delete'])->name('recuerdo.delete');
 
 // interfaz de ventas resgistrar tickets
@@ -151,3 +154,14 @@ Route::get('/ventasConsultartickets',[controladorVentas::class,'metodoConsultart
 Route::post('/Mostrartickets',[controladorVentas::class,'metodoMostrartickets'])->name('Mostrartickets');
 // imprimir tikets
 Route::post('/Imprimirtickets',[controladorVentas::class,'metodoImprimirtickets'])->name('Imprimirtickets');
+
+//ALMACEN
+Route::get('/almacenRegistrarProducto',[controladorAlmacen::class,'metodoRegistroProducto'])->name('paginaActualizar')->middleware('auth');
+Route::get('/almacenActualizar',[controladorAlmacen::class,'metodoActualizar'])->name('paginaActualizar')->middleware('auth');
+Route::get('/almacenBuscar',[controladorAlmacen::class,'metodoBuscar'])->name('paginaBuscar')->middleware('auth');
+Route::get('/almacenConsultar',[controladorAlmacen::class,'metodoConsultar'])->name('paginaConsultar')->middleware('auth');
+Route::post('/guardarRegistro',[controladorAlmacen::class,'metodoGuardarAR'])->name('Guardar')->middleware('auth');
+Route::post('/guardarRegistroAct',[controladorAlmacen::class,'metodoGuardarAct'])->name('GuardarAct')->middleware('auth');
+
+
+Route::resource('productos',AlmacenController::class);

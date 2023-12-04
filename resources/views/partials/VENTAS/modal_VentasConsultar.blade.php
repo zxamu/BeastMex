@@ -8,7 +8,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form method="POST" action="{{ route('actualizarProducto', ['id_producto' => $item->id_producto]) }}">
+                  <form method="POST" action="/editar/{{ $item->id_producto }}/confirm">
                     @csrf
                         <div class="mb-3">
                           <label class="form-label">Nombre del Producto:</label>
