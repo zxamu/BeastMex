@@ -46,7 +46,7 @@
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtSerie" class="form-control" placeholder="Apellido paterno">
+        <input type="text" name="txtNoserie" class="form-control" placeholder="Apellido paterno">
         <label for="floatingInputGroup1">No. Serie</label>
       </div>
     </div>
@@ -68,13 +68,6 @@
       </div>
     </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>
-      <div class="form-floating">
-        <input type="text" name="txtFecha" class="form-control" placeholder="Contraseña">
-        <label for="floatingInputGroup1">Fecha ingreso</label>
-      </div>
-    </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>

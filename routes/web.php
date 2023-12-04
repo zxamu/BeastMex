@@ -44,12 +44,16 @@ Route::post('/pBuscarProductos', [controladorCompras::class, 'metodoComprasBP'])
 Route::post('/pRegistrarProveedor', [controladorCompras::class, 'metodoRegistroP'])->middleware('auth');
 
 //ALMACEN
-Route::get('/almacenRegistrarProducto',[controladorAlmacen::class,'metodoRegistroProducto'])->name('paginaActualizar')->middleware('auth');
+/* Route::get('/almacenRegistrarProducto',[controladorAlmacen::class,'metodoRegistroProducto'])->name('paginaActualizar')->middleware('auth');
 Route::get('/almacenActualizar',[controladorAlmacen::class,'metodoActualizar'])->name('paginaActualizar')->middleware('auth');
 Route::get('/almacenBuscar',[controladorAlmacen::class,'metodoBuscar'])->name('paginaBuscar')->middleware('auth');
 Route::get('/almacenConsultar',[controladorAlmacen::class,'metodoConsultar'])->name('paginaConsultar')->middleware('auth');
 Route::post('/guardarRegistro',[controladorAlmacen::class,'metodoGuardarAR'])->name('Guardar')->middleware('auth');
 Route::post('/guardarRegistroAct',[controladorAlmacen::class,'metodoGuardarAct'])->name('GuardarAct')->middleware('auth');
+ */
+
+Route::resource('almacen',AlmacenController::class);
+
 
 //VENTAS
 
