@@ -55,6 +55,7 @@ return new class extends Migration
             $table->decimal('compra', 10, 2);
             $table->decimal('precio_venta', 10, 2);
             $table->date('fecha_ingreso');
+            $table->timestamps();
         });
 
         // Tabla: desc_repor_product

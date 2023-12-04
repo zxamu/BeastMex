@@ -1,15 +1,13 @@
 @extends('layouts.app')
 
-@section('titulo','BeastMex')
+@section('titulo','Almacen')
 
-@section('contenido')
+@section('content')
 
-@include('partials.navbar')
+@include('ALMACEN.almacenIndex')
 
-<div class="container mt-5 col-md-6">
-  <p class="fw-bolder fs-3 text-center">ALMACEN</p>
-  <p class="fw-medium fs-5 text-center">CONSULTAR PRODUCTOS</p>
-</div>
+<h3 class="display-1 text-center text-danger mt-4"> Almacen</h3>
+
 <div class="container">
 
 <div class="row">
@@ -20,8 +18,8 @@
 
         <table class="table ">
 
-            <button type="button" class="btn btn-success m-5" data-bs-toggle="modal" data-bs-target="#create">
-                <i class="bi bi-floppy"></i>  Nuevo Libro
+            <button type="button" class="btn btn-dark m-5" data-bs-toggle="modal" data-bs-target="#create">
+                <i class="bi bi-floppy"></i>  Nuevo producto
             </button>
 
 
@@ -29,22 +27,29 @@
 
                 <tr>
                     <th scope="col">Id: </th>
-                    <th scope="col">Titulo: </th>
-                    <th scope="col">Autor: </th>
-                    <th scope="col">Paginas: </th>
-                    <th scope="col">Año Publicacion: </th>
+                    <th scope="col">Nombre: </th>
+                    <th scope="col">No. Serie: </th>
+                    <th scope="col">Marca: </th>
+                    <th scope="col">Cantidad: </th>
+                    <th scope="col">Costo: </th>
+                    <th scope="col">Precio de Compra: </th>
+                    <th scope="col">Precio de Venta: </th>
                     <th scope="col"> </th>
                 </tr>
             </thead> 
             <tbody>
                 <tr>
-                    @foreach ($allbooks as $item)
+                    @foreach ($allproducts as $item)
                     <tr>
                         <td scope="row">{{$item->id}}</td>
-                        <td>{{$item->titulo}}</td>
-                        <td>{{$item->autor}}</td>
-                        <td>{{$item->paginas}}</td>
-                        <td>{{$item->anio}}</td>
+                        <td>{{$item->nombre_producto}}</td>
+                        <td>{{$item->no_serie}}</td>
+                        <td>{{$item->marca}}</td>
+                        <td>{{$item->cantidad}}</td>
+                        <td>{{$item->costo}}</td>
+                        <td>{{$item->compra}}</td>
+                        <td>{{$item->precio_venta}}</td>
+                        <td>{{$item->fecha_ingreso}}</td>
                         <td>
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,7 +68,7 @@
                         </td>
                         
                     </tr>
-                    @include('libros.options')
+                    @include('ALMACEN.almacenOptions')
                     @endforeach
             </tbody>
         </table>
