@@ -33,6 +33,10 @@ use App\Http\Controllers\AlmacenController;
 
 Route::get('/home', [BeastMexController::class, 'index']);
 
+Route::get('/login', function () {
+    return view('login'); // Reemplaza 'auth.login' con la vista correcta si está en una ubicación diferente.
+})->name('login');
+
 /* Route::get('/compraConsultarOrdenCompra', [controladorCompras::class, 'metodoConsultarOC']);
 
 Route::get('/comprasBuscarProductos', [controladorCompras::class, 'metodoBuscarProductos']);
