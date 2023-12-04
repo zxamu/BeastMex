@@ -9,7 +9,6 @@ use App\Http\Requests\COMPRAS\validadorCoomprasBuscarProducto;
 class controladorCompras extends Controller
 {
     //COMPRAS
-
     public function metodoBuscarProductos(){
         return view('COMPRAS/comprasBuscarProductos');
     }

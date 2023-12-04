@@ -5,6 +5,7 @@
 @section('contenido')
 
 
+
 <div class="container mt-5 col-md-6">
   <p class="fw-bolder fs-3 text-center">ALMACEN</p>
   <p class="fw-medium fs-5 text-center">REGISTRAR PRODUCTO</p>
@@ -32,23 +33,21 @@
         @endforeach
     @endif
 
-    <form method="POST" action="/guardarRegistro">  
+    <form method="POST" action="/guardarRegistro"> 
       @csrf 
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtNombre" class="form-control" value="{{old('txtNobre')}}">
+        <input type="text" name="txtNombre" class="form-control" placeholder="Nombre(s)">
         <label for="floatingInputGroup1">Nombre producto</label>
-        {{$errors->first('txtNombre')}}
       </div>
     </div>
     
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtSerie" class="form-control" value="{{old('txtSerie')}}">
+        <input type="text" name="txtSerie" class="form-control" placeholder="Apellido paterno">
         <label for="floatingInputGroup1">No. Serie</label>
-        {{$errors->first('txtSerie')}}
       </div>
     </div>
 
@@ -56,54 +55,48 @@
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-person-workspace"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtMarca" class="form-control"  value="{{old('txtMarca')}}">
+        <input type="text" name="txtMarca" class="form-control" placeholder="Puesto">
         <label for="floatingInputGroup1">Marca</label>
-        {{$errors->first('txtMarca')}}
       </div>
     </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-envelope-at-fill"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtCantidad" class="form-control"  value="{{old('txtCantidad')}}">
+        <input type="text" name="txtCantidad" class="form-control" placeholder="Correo">
         <label for="floatingInputGroup1">Cantidad</label>
-        {{$errors->first('txtCantidad')}}
       </div>
     </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>
       <div class="form-floating">
-        <input type="date" name="txtFecha" class="form-control" value="{{old('txtFecha')}}">
+        <input type="text" name="txtFecha" class="form-control" placeholder="Contraseña">
         <label for="floatingInputGroup1">Fecha ingreso</label>
-        {{$errors->first('txtFecha')}}
       </div>
     </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtFolio" class="form-control" value="{{old('txtFolio')}}">
+        <input type="text" name="txtFolio" class="form-control" placeholder="Contraseña">
         <label for="floatingInputGroup1">Folio</label>
-        {{$errors->first('txtFolio')}}
       </div>
     </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtCosto" class="form-control" value="{{old('txtCosto')}}">
+        <input type="text" name="txtCosto" class="form-control" placeholder="Contraseña">
         <label for="floatingInputGroup1">Costo de compra</label>
-        {{$errors->first('txtCosto')}}
       </div>
     </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-file-lock2-fill"></i></span>
       <div class="form-floating">
-        <input type="text" name="txtPrecio" class="form-control" value="{{old('txtPrecio')}}">
+        <input type="text" name="txtPrecio" class="form-control" placeholder="Contraseña">
         <label for="floatingInputGroup1">Precio de venta</label>
-        {{$errors->first('txtPrecio')}}
       </div>
     </div>
     

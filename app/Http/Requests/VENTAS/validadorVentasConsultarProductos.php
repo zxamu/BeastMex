@@ -22,7 +22,7 @@ class validadorVentasConsultarProductos extends FormRequest
     public function rules(): array
     {
         return [
-            'txtNombreproducto' => 'required|string',
+            //
         ];
     }
 }

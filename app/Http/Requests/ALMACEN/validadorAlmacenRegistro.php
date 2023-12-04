@@ -22,10 +22,11 @@ class validadorAlmacenRegistro extends FormRequest
     public function rules(): array
     {
         return [
-            'txtSerie' => 'required|numeric',
+            'txtNombre' => 'required',
+            'txtSerie' => 'required|regex:/^[0-9]{17}$/',
             'txtCantidad' => 'required|numeric',
-            'txtFolio' => 'required|numeric',
-            'txtPrecio' => 'required|numeric',
+            'txtFolio' => 'required|regex:/^[0-9]{7}$/',
+            'txtPrecio' => 'required',
 
 
         ];
